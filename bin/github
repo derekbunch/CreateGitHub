@@ -1,0 +1,7 @@
+#!/usr/bin/zsh
+
+if [ $# -lt 2 ]; then
+  echo "\r\nUsage: github FOLDERNAME LANGUAGE [options]"
+  exit
+fi
+python3 ~/dev/py/CreateGitHub/CreateGit.py $1 $2
