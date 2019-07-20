@@ -1,7 +1,10 @@
 #!/usr/bin/zsh
 
-if [ $# -lt 2 ]; then
+if [ $# -lt 3 ]; then
   echo "\r\nUsage: github FOLDERNAME LANGUAGE [options]"
+  echo "\r\nOptions:"
+  echo "-c Create"
+  echo "-d Delete"
   exit
 fi
-python3 ~/dev/py/CreateGitHub/CreateGit.py $1 $2
+python3 ~/dev/py/CreateGitHub/CreateGit.py $1 $2 $3
