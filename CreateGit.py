@@ -27,7 +27,7 @@ def create():
 
     # Set variables for passed argument for reuse
     projectName = sys.argv[1]
-    
+
     if (sys.argv[2] in data['languages']):
         language = data['languages'][sys.argv[2]]
     else:
@@ -40,6 +40,7 @@ def create():
         newLanguage(language)
 
     os.chdir('./{}'.format(language))
+    print(os.getcwd())
     try:
         os.mkdir('./{}'.format(projectName))
     except:
@@ -54,23 +55,23 @@ def create():
         elif (new == 'n'):
             projectName = input('What would you like the new name to be? ')
     
-        if (token is None):
-            g = Github(username, password)
-        else:
-            g = Github(token)
-        user = g.get_user()
-        user.create_repo('\n' + projectName)
+    if (token is None):
+        g = Github(username, password)
+    else:
+        g = Github(token)
+    user = g.get_user()
+    user.create_repo('\n' + projectName)
 
-        # git actions
-        os.chdir(projectName)
-        os.system('git init')
-        os.system('git remote add origin git@github.com:derekbunch/{}.git'.format(projectName))
-        os.system('touch README.md')
-        os.system('git add .')
-        os.system('git commit -m "Initial Commit"')
-        os.system('git push -u origin master')
-        #os.system('code-insiders .')
-        print('{} repo created!'.format(projectName))
+    # git actions
+    os.chdir(projectName)
+    os.system('git init')
+    os.system('git remote add origin git@github.com:derekbunch/{}.git'.format(projectName))
+    os.system('touch README.md')
+    os.system('git add .')
+    os.system('git commit -m "Initial Commit"')
+    os.system('git push -u origin master')
+    #os.system('code-insiders .')
+    print('{} repo created!'.format(projectName))
 
 def delete():
     bin = os.path.dirname(sys.argv[0]) + '/bin/'
