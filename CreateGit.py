@@ -80,7 +80,6 @@ def delete():
         username = data['credentials']['username']
         password = data['credentials']['password']
         token = data['credentials']['accesstoken']
-        projectsFolder = data['folders']['projects']
     projectName = sys.argv[1]
 
     if (token is None):
