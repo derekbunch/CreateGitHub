@@ -7,7 +7,7 @@ This project creates/deletes a folder on your local machine (organized by langua
 git clone https://github.com/derekbunch/CreateGitHub.git
 cd CreateGitHub
 pip install -r requirements.txt
-. ~/github
+. ./github
 ```
 
 ### Usage:
