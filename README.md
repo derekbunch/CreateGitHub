@@ -3,19 +3,20 @@ Inspired by [KalleHallden](https://github.com/KalleHallden)'s [project](https://
 This project creates/deletes a folder on your local machine (organized by language) and initializes/removes it as a GitHub repo.
 
 ### Install: 
-```zsh
+```bash
 git clone https://github.com/derekbunch/CreateGitHub.git
-cd CreateGitHub
+cd CreateGitHub/bin
 pip install -r requirements.txt
-. ./github
+Update filepath in github file to the path where you installed CreateGitHub
+./github
 ```
+If you would like to run this from anywhere, add _<path_to_file>/CreateGitHub/bin_ to the $PATH in your shell
 
 ### Usage:
-```zsh
+```bash
 To run the script type in 'github <name of your project> <language> <Option>'
 
 Options:
 -c: Create
 -d: Delete
 ```
-
