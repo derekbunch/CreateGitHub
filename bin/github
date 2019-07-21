@@ -1,10 +1,13 @@
-#!/usr/bin/zsh
+#!/bin/bash
 
 if [ $# -lt 3 ]; then
-  echo "\r\nUsage: github FOLDERNAME LANGUAGE [options]"
-  echo "\r\nOptions:"
+  echo ""
+  echo "Usage: github FOLDERNAME LANGUAGE [options]"
+  echo ""
+  echo "Options:"
   echo "-c Create"
   echo "-d Delete"
   exit
 fi
+# Update this to the path you installed CreateGitHub to
 python3 ~/dev/py/CreateGitHub/CreateGit.py $1 $2 $3
