@@ -20,3 +20,8 @@ Options:
 -c: Create
 -d: Delete
 ```
+
+Things I learned in this project:
+* Read/Write JSON in Python
+* Github API
+* Webscraping with Selenium
