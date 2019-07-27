@@ -9,14 +9,14 @@ def setup():
     print('---------------')
     installFolder = sys.argv[0].replace('CreateGit.py','')
     projectsFolder = input('Where would you like projects to be saved?\n')
-    authMethod = input('Would you like to use an access token (instead of Username and Password)? (y/n)\n')
-    username, password, token = '', '', ''
+    username = input('GitHub Username: ')
+    authMethod = input('Would you like to use an access token (instead of a Password)? (y/n)\n')
+    password, token = '', ''
     while (authMethod != 'y' and authMethod != 'n'):
         authMethod = input("Please choose (y) or (n): ")
     if (authMethod == 'y'):
         token = input('Access Token: ')
     elif (authMethod == 'n'):
-        username = input('Username: ')
         password = input('Password: ')
     
     data = {}
@@ -94,7 +94,7 @@ def create():
     # git actions
     os.chdir(projectName)
     os.system('git init')
-    os.system('git remote add origin git@github.com:derekbunch/{}.git'.format(projectName))
+    os.system('git remote add origin git@github.com:{0}/{1}.git'.format(username, projectName))
     os.system('touch README.md')
     os.system('git add .')
     os.system('git commit -m "Initial Commit"')
