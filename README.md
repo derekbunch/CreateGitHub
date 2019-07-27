@@ -20,3 +20,9 @@ Options:
 -c: Create
 -d: Delete
 ```
+If you face any issues with GitHub login, just delete the config.json file and you can go through the setup process again
+
+Things I learned in this project:
+* Read/Write JSON in Python
+* Github API
+* Webscraping with Selenium
