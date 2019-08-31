@@ -8,6 +8,15 @@ if [ $# -lt 3 ]; then
   echo "-c Create"
   echo "-d Delete"
   exit
+elif [[ ($3 != "-c") && ($3 != "-d") ]]; then
+  echo ""
+  echo "*** Option must be -c or -d ***"
+  echo "Usage: github FOLDERNAME LANGUAGE [options]"
+  echo ""
+  echo "Options:"
+  echo "-c Create"
+  echo "-d Delete"
+  exit
 fi
 # Update this to the path you installed CreateGitHub to
-python3 ~/dev/py/CreateGitHub/CreateGit.py $1 $2 $3
+python3 ~/source/py/CreateGitHub/CreateGit.py $1 $2 $3
